@@ -1,6 +1,7 @@
 {
   "name": "cuim",
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "main": "index.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

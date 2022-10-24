@@ -68,10 +68,10 @@ const btnStylePaly = () => {
       cursor: pointer;
       /* 过渡 */
       transition: 0.2s ease-in;
-      //   &:hover {
-      //     background-color: #4854ff;
-      //     box-shadow: 0 0 0 8px rgba(92, 103, 255, 0.3);
-      //   }
+      &:hover {
+        background-color: #4854ff;
+        box-shadow: 0 0 0 8px rgba(92, 103, 255, 0.3);
+      }
     }
     .clickStyle {
       background-color: #4854ff;
@@ -85,7 +85,6 @@ const btnStylePaly = () => {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
     transition: transform 0.3s ease-out;
   }
   /* 菜单按钮图标（三条杠） */
