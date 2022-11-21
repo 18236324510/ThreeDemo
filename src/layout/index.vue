@@ -22,8 +22,13 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
   .overlay {
     position: absolute;
+  }
+  main {
+    flex-grow: 1;
   }
 }
 </style>

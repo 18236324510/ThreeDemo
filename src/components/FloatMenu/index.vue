@@ -1,5 +1,17 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+export interface IMenuList {
+  path: string;
+  label: string;
+}
+import { ref, toRefs } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+interface IProps {
+  menuList: Array<IMenuList>;
+}
+const props = withDefaults(defineProps<IProps>(), {});
+const { menuList } = toRefs(props);
 // state
 const clickStyle = ref<Boolean>(false);
 const menuActive = ref<Boolean>(false);
@@ -35,10 +47,13 @@ const btnStylePaly = () => {
       </div>
       <!-- 菜单列表 -->
       <ul class="menu-list">
-        <li><i class="fa fa-sliders"></i><span>设置</span></li>
-        <li><i class="fa fa-clone"></i><span>复制</span></li>
-        <li><i class="fa fa-share-square-o"></i><span>分享</span></li>
-        <li><i class="fa fa-trash-o"></i><span>删除</span></li>
+        <li
+          v-for="item in menuList"
+          :key="item.path"
+          @click="() => router.push(item.path)"
+        >
+          <i class="fa"></i><span>{{ item.label }}</span>
+        </li>
       </ul>
     </div>
   </div>
